@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="container-header">ATM</div>
+  <form [formGroup]="parentForm">
+    <div class="container-subhead">
+      Total Amount: {{ parentForm.get("totalAmount")?.value }}
+    </div>
+    <div>
+      <input
+        type="text"
+        placeholder="enter 2k note value"
+        formControlName="twoThousand"
+      />
+
+      <input
+        type="text"
+        placeholder="enter 500 note value"
+        formControlName="fiveHundred"
+      />
+
+      <input
+        type="text"
+        placeholder="enter 200 note value"
+        formControlName="twoHundred"
+      />
+
+      <input
+        type="text"
+        placeholder="enter 100 note value"
+        formControlName="oneHundred"
+      />
+    </div>
+    <div>
+      <input
+        type="text"
+        placeholder="enter 50 note value"
+        formControlName="fifty"
+      />
+
+      <input
+        type="text"
+        placeholder="enter 20 note value"
+        formControlName="twenty"
+      />
+
+      <input
+        type="text"
+        placeholder="enter 10 note value"
+        formControlName="ten"
+      />
+    </div>
+  </form>
+</div>

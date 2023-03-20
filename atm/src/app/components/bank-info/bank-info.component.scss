@@ -1,0 +1,21 @@
+.container {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 50px;
+  &-header {
+    font-weight: bold;
+    font-size: 40px;
+  }
+  &-subhead {
+    padding: 10px 0 20px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+input {
+  margin: 20px;
+  padding-left: 10px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid rgb(78, 69, 69);
+}

@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="container-header">User</div>
+  <form [formGroup]="parentForm">
+    <div class="container-subhead" *ngIf="!userForm || userBalance">
+      User Amount
+      <input type="text" placeholder="enter amount" formControlName="amount" />
+    </div>
+  </form>
+  <div class="btn" *ngIf="!userForm">
+    <button (click)="userAction('deposit')">deposit</button>
+    <button (click)="userAction('withdraw')">withdraw</button>
+    <button (click)="userAction('balance')">balance</button>
+  </div>
+
+  <div *ngIf="error.visible">
+    {{ error.message }}
+  </div>
+  <ng-container *ngIf="userForm && !userBalance">
+    <form [formGroup]="parentForm">
+      <div formGroupName="noteValue">
+        <div>
+          <input
+            type="text"
+            placeholder="enter 2k note value"
+            formControlName="twoThousand"
+          />
+
+          <input
+            type="text"
+            placeholder="enter 500 note value"
+            formControlName="fiveHundred"
+          />
+
+          <input
+            type="text"
+            placeholder="enter 200 note value"
+            formControlName="twoHundred"
+          />
+
+          <input
+            type="text"
+            placeholder="enter 100 note value"
+            formControlName="oneHundred"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="enter 50 note value"
+            formControlName="fifty"
+          />
+
+          <input
+            type="text"
+            placeholder="enter 20 note value"
+            formControlName="twenty"
+          />
+
+          <input
+            type="text"
+            placeholder="enter 10 note value"
+            formControlName="ten"
+          />
+        </div>
+      </div>
+      <div class="btn">
+        <button (click)="handleClick(false)">Back</button>
+        <button (click)="handleClick(true)">continue</button>
+      </div>
+    </form>
+  </ng-container>
+</div>

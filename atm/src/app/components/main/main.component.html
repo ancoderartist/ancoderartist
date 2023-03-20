@@ -1,0 +1,19 @@
+<ng-container *ngIf="!openUserForm; else userForm">
+  <app-bank-info [parentForm]="atmFG"></app-bank-info>
+  <div class="btn">
+    <button
+      (click)="enableUserForm()"
+      [style.background-color]="
+        this.atmFG.get('totalAmount')?.value ? 'red' : ''
+      "
+    >
+      Continue
+    </button>
+  </div>
+</ng-container>
+<ng-template #userForm>
+  <div class="cross">
+    <div (click)="disableUserForm()" class="cross-btn">x</div>
+    <app-user-info [parentForm]="userFG" [atmFG]="atmFG"></app-user-info>
+  </div>
+</ng-template>
